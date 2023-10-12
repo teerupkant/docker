@@ -1,0 +1,5 @@
+FROM httpd:2.4-alpine
+#FOR VULNABILITIES
+RUN apk update
+RUN apk add -u musl=1.1.22-r3 musl-utils=1.1.22-r3
+RUN sed -i -e 's/^root::/root:!:/' /etc/shadow
